@@ -122,21 +122,6 @@
       filter: grayscale(0%);
     }
 
-    .grid-item::after {
-      content: "Ver";
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      background: rgba(212,175,55,0.8);
-      padding: 6px 12px;
-      opacity: 0;
-      font-size: 0.9rem;
-      border-radius: 6px;
-      transition: 0.3s;
-      color: black;
-      font-weight: bold;
-    }
-
     .grid-item:hover::after {
       opacity: 1;
       transform: translateY(-6px);
@@ -188,7 +173,59 @@
       border-radius: 12px;
       box-shadow: 0 0 25px rgba(0,0,0,0.8);
     }
-  </style>
+  
+
+    /* Responsive Fixes */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .hero {
+        background-attachment: scroll;
+        padding-top: 40px;
+      }
+
+      .hero img {
+        width: 200px !important;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+        text-align: center;
+        padding: 0 20px;
+      }
+
+      .galeria {
+        padding: 80px 20px;
+      }
+
+      .grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 15px;
+      }
+
+      .grid-item img {
+        height: 220px;
+      }
+
+      .contacto p {
+        font-size: 1rem;
+      }
+    }
+
+    /* Extra Small Phones */
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .grid-item img {
+        height: 180px;
+      }
+    }
+
+</style>
 </head>
 <body>
 
@@ -270,5 +307,7 @@
 <audio id="bg-music" loop src="musica.mp3"></audio>
 </body>
 </html>
+
+
 
 
