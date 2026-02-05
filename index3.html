@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brayan Vera - Tatuador</title>
+  <style>
+    :root {
+      --gold: #d4af37;
+      --black: #0a0a0a;
+      --industrial-gray: #2e2e2e;
+      --light-gray: #b3b3b3;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'UnifrakturCook', 'Cinzel', serif;
+      background: var(--black);
+      color: var(--light-gray);
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, var(--black), var(--industrial-gray));
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    header h1 {
+      color: var(--gold);
+      font-size: 2.4rem;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+
+    nav a {
+      color: var(--light-gray);
+      margin-left: 20px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: url('TU_IMAGEN_HERO.jpg') center/cover no-repeat fixed;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(4px);
+    }
+
+    .hero h2 {
+      position: relative;
+      color: var(--gold);
+      font-size: 3rem;
+      text-shadow: 0 0 15px rgba(212,175,55,0.4);
+      animation: fadeUp 2s ease-in-out;
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(40px);} 
+      100% { opacity: 1; transform: translateY(0);} 
+    }
+
+    /* Galería */
+    .galeria {
+      padding: 100px 40px;
+      background: var(--industrial-gray);
+    }
+
+    .galeria h2 {
+      color: var(--gold);
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .grid img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: 0.4s;
+      filter: grayscale(40%) blur(1px);
+    }
+
+    .grid img:hover {
+      transform: scale(1.05);
+      filter: grayscale(0%) blur(0);
+    }
+
+    /* Contacto */
+    .contacto {
+      padding: 100px 40px;
+      background: var(--black);
+      text-align: center;
+    }
+
+    .contacto h2 {
+      color: var(--gold);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .contacto p {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--industrial-gray);
+      color: var(--light-gray);
+      font-size: 0.9rem;
+    }
+      /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.3s;
+    }
+
+    .lightbox.hidden {
+      display: none;
+    }
+
+    .lightbox-content img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.8);
+    }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1 style="font-family: 'Cinzel', serif; font-size: 3rem; letter-spacing: 4px; text-align:center;">BRAYAN VERA TATUADOR</h1>
+  
+</header>
+
+<section class="hero">
+  <img src="logo-bv.png" alt="Logo BV" style="position:relative; width:280px; margin-bottom:20px; z-index:2; filter: drop-shadow(0 0 12px rgba(212,175,55,0.5));">
+  <h2>Tatuajes con Estilo y Precisión</h2>
+</section>
+
+<section class="galeria" id="galeria">
+  <h2>Mi Galería</h2>
+  <div class="grid">
+    <img src="2.jpeg" alt="Tatuaje 2">
+    <img src="3.jpeg" alt="Tatuaje 3">
+    <img src="4.jpeg" alt="Tatuaje 4">
+    <img src="5.jpeg" alt="Tatuaje 5">
+    <img src="6.jpeg" alt="Tatuaje 6">
+    <img src="7.jpeg" alt="Tatuaje 7">
+    <img src="8.jpeg" alt="Tatuaje 8">
+    <img src="9.jpeg" alt="Tatuaje 9">
+    <img src="10.jpeg" alt="Tatuaje 10">
+    <img src="11.jpeg" alt="Tatuaje 11">
+    <img src="12.jpeg" alt="Tatuaje 12">
+    <img src="13.jpeg" alt="Tatuaje 13">
+    <img src="14.jpeg" alt="Tatuaje 14">
+    <img src="15.jpeg" alt="Tatuaje 15">
+    <img src="16.jpeg" alt="Tatuaje 16">
+    <img src="17.jpeg" alt="Tatuaje 17">
+    
+    <img src="19.jpeg" alt="Tatuaje 19">
+    <img src="20.jpeg" alt="Tatuaje 20">
+  </div>
+</section>
+
+<section class="contacto" id="contacto">
+  <h2>Contacto</h2>
+  <p>Aquí puedes agregar tu información de contacto:</p>
+  <p>WhatsApp: TU_NUMERO</p>
+  <p>Instagram: TU_INSTAGRAM</p>
+  <p>Dirección: TU_DIRECCION</p>
+</section>
+
+<footer>
+  © 2024 Brayan Vera - Todos los derechos reservados
+</footer>
+
+  
+<!-- Lightbox Preview -->
+<div id="lightbox" class="lightbox hidden">
+  <div class="lightbox-content">
+    <img id="lightbox-img" src="" alt="Preview">
+  </div>
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const images = document.querySelectorAll('.grid img');
+
+  images.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.remove('hidden');
+    });
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if(e.target !== lightboxImg) {
+      lightbox.classList.add('hidden');
+    }
+  });
+</script>
+  
+<audio autoplay loop src="musica.mp3"></audio>
+</body>
+</html>
